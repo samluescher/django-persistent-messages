@@ -6,7 +6,7 @@ A Django app for unified and persistent user messages/notifications, built on to
 This app provides support for messages that are supposed to be persistent, that is, they outlast a browser session and will be displayed as “sticky” notes to the user, until they are actively marked as read. Once read, messages are still listed in the message inbox for each user. In short: While `django.contrib.messages` makes sure that messages you create are displayed to the user, this app makes sure that they actually get noticed.  
 
 * For authenticated users, messages are stored in the database. They can be temporary just like regular messages, or persistent as described above.
-* For anonymous users, the default cookie/session-based approach is used, i.e. there is no database access for storing messages.
+* For anonymous users, the default cookie/session-based approach is used, i.e. there is no database access for storing messages and persistent messages are *not* possible.
 * There is a unified API for displaying messages to both types of users, that is, you can use the same code you'd be using with Django's messaging framework in order to add and display messages, but there is additional functionality available if the user is authenticated.
 * Messages can be displayed on-screen and/or sent to individual users as email notifications.
 
